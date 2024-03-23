@@ -1,0 +1,8 @@
+.main-header-row {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 36px;
+  }
