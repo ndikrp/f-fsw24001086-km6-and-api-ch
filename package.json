@@ -1,0 +1,30 @@
+{
+  "name": "challenge4",
+  "version": "1.0.0",
+  "description": "Fullstack Web Development Challenge 4 Binar Academy - FSW2402KM6004 Andhika Rizky Aulia",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndikrp/f-fsw24001086-km6-dbs-api-ch4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ndikrp/f-fsw24001086-km6-dbs-api-ch4/issues"
+  },
+  "homepage": "https://github.com/ndikrp/f-fsw24001086-km6-dbs-api-ch4#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "eslint": "^8.57.0",
+    "express": "^4.19.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.0",
+    "pg": "^8.11.3",
+    "sequelize": "^6.37.1"
+  }
+}
