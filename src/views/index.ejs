@@ -4,71 +4,75 @@
 <head>
     <%- include('./section/head') %>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/index.css">
-    <title>Car Management Dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Car Management Dashboard</title>
+        <link rel="stylesheet" href="./styles/index.css">
+
+        <script src="scripts/component/Car.js"></script>
+        <script src="scripts/component/CarDashboard.js"></script>
+        <script src="scripts/index.js"></script>
 </head>
 
 <body>
-    <%- include('./section/nav')  %>
+    <%- include('./section/nav') %>
 
-    <div class="delete-btn">
-        <div class="prompt-dialog">
-            <img src="./assets/img/img-BeepBeep.png" alt="" width="200" height="200">
-            <div class="prompt-text">
-                <span class="text-dialog">
-                    <p>
-                        Setelah dihapus, data mobil tidak dapat dikembalikan. Anda yakin ingin menghapus?
-                    </p>
-                </span>
-            </div>
-            <div>
-                <button class="blue-btn" id="blue-btn">Ya</button>
-                <button class="btn-blue-outline" id="cancel-btn">Tidak</button>
+        <div class="delete-btn">
+            <div class="prompt-dialog">
+                <img src="assets/img/img-BeepBeep.png" alt="" width="200" height="200">
+                <div class="prompt-text">
+                    <span class="text-dialog">
+                        <p>
+                            Setelah dihapus, data mobil tidak dapat dikembalikan. Anda yakin ingin menghapus?
+                        </p>
+                    </span>
+                </div>
+                <div>
+                    <button class="confirm-delete" id="blue-btn">Ya</button>
+                    <button class="confirm-cancel" id="cancel-btn">Tidak</button>
+                </div>
             </div>
         </div>
-    </div>
-    <main>
-        <header>
-            <div class="alert hidden">
-                <span>Data Berhasil Dihapus</span>
-            </div>
-            <ul class="nav-path">
-                <li>Cars</li>
-                <li>
-                    <img src="./assets/icons/filepath.svg" alt="">
-                    <a href="List Car"></a>
-                </li>
-            </ul>
-            <div class="main-header-row">
-                <h1>List Car</h1>
-                <a href="/add">
-                    <img src="./assets/icons/plus.svg" alt="">
-                    <span>Add New Car</span>
-                </a>
-            </div>
-            <div class="car-sorting">
-                <div class="active">
-                    <input type="radio" name="car-size" id="car-size-radio1" value="all" checked>
-                    <label for="car-size-radio1">All</label>
+        <main>
+            <header>
+                <div class="alert hidden">
+                    <span>Data Berhasil Dihapus</span>
                 </div>
-                <div>
-                    <input type="radio" name="car-size" id="car-size-radio2" value="small" />
-                    <label for="car-size-radio2">Small</label>
+                <ul class="nav-path">
+                    <li>Cars</li>
+                    <li>
+                        <img src="assets/icons/filepath.svg" alt="">
+                        <a href="List Car"></a>
+                    </li>
+                </ul>
+                <div class="main-header-row">
+                    <h1>List Car</h1>
+                    <a href="/add">
+                        <img src="assets/icons/plus.svg" alt="">
+                        <span>Add New Car</span>
+                    </a>
                 </div>
-                <div>
-                    <input type="radio" name="car-size" id="car-size-radio3" value="medium" />
-                    <label for="car-size-radio3">Medium</label>
+                <div class="car-sorting">
+                    <div class="active">
+                        <input type="radio" name="car-size" id="car-size-radio1" value="all" checked>
+                        <label for="car-size-radio1">All</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="car-size" id="car-size-radio2" value="small" />
+                        <label for="car-size-radio2">Small</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="car-size" id="car-size-radio3" value="medium" />
+                        <label for="car-size-radio3">Medium</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="car-size" id="car-size-radio4" value="large" />
+                        <label for="car-size-radio4">Large</label>
+                    </div>
                 </div>
-                <div>
-                    <input type="radio" name="car-size" id="car-size-radio4" value="large" />
-                    <label for="car-size-radio4">Large</label>
-                </div>
-            </div>
-        </header>
-        <ul class="car-list"></ul>
-    </main>
+            </header>
+            <ul class="car-list"></ul>
+        </main>
 </body>
 
 </html>

@@ -2,8 +2,9 @@ require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
 const path = require('path')
-const PORT = process.env.PORT
 const router = require('./routes/router')
+const PORT = process.env.PORT
+
 
 const app = express()
 

@@ -1,4 +1,5 @@
 const express = require('express')
+const { Car } = require('../db/models')
 
 const router = express.Router()
 
@@ -19,7 +20,13 @@ router.get('/cars', (req, res) => {
                     data: cars
                 })
         })
-    console.log(data)
+        .catch(err => {
+            res.status(500)
+                .json({
+                    status: 'Failed!',
+                    message: 'Internal server error'
+                })
+        })
 })
 
 module.exports = router

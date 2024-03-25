@@ -36,4 +36,14 @@ class AddCar {
                 console.log(err)
             })
     }
+
+    // init() {
+    //     this.cancelBtn.onclick = async () => {
+    //         if (!this.submitBtn.disabled) {
+    //             this.formOverlay.classList.add('active')
+
+    //             const response = await this.
+    //         }
+    //     }
+    // }
 }
