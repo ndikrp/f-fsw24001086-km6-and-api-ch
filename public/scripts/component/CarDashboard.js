@@ -46,7 +46,7 @@ class CarDashboard {
     }
     async removeCarData(id) {
         // require api config file
-        const url = `http://${api.host}:${api.port}/api/cars/${id}`;
+        const url = `http://localhost:8000/api/v1/cars/${id}`;
 
         return fetch(url, {
             method: 'DELETE',

@@ -1,2 +1,4 @@
-const app = new CarDashboard();
-app.init();
+document.addEventListener("DOMContentLoaded", function() {
+    const app = new CarDashboard();
+    app.init();
+});

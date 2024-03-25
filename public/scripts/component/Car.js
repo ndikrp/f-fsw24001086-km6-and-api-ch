@@ -48,11 +48,11 @@ class Car {
           </div>
           <div class="car-card-btn">
             <a class="btn-delete">
-              <img src="img/icons/trash.svg" alt="delete-icon" />
+              <img src="assets/icons/trash.svg" alt="delete-icon" />
               <span>Delete</span>
             </a>
             <a href="/edit?id=${this.id}" class="btn-edit">
-              <img src="img/icons/edit.svg" alt="edit-icon" />
+              <img src="assets/icons/edit.svg" alt="edit-icon" />
               <span>Edit</span>
             </a>
           </div>

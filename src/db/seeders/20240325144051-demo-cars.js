@@ -8,7 +8,7 @@ module.exports = {
       size: 'Small',
       rent_per_day: 2500000,
       image_id: 1,
-      image_url: 'https://res.cloudinary.com/dgjwtquka/image/upload/v1664959593/phqnlmh3b7ocuwtdpfvi.jpg',
+      image_url: 'https://qph.cf2.quoracdn.net/main-qimg-ea51620ee02b28f409a6641db540d6e3-pjlq',
       createdAt: new Date(),
       updatedAt: new Date()
     }  
