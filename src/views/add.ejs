@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./section/head") %>
+        <title>Add Car</title>
+</head>
+
+<body>
+    <%- include("./section/nav") %>
+        <span class="form-overlay">
+            <span id="html-spinner"></span>
+        </span>
+        <main>
+            <header>
+                <ul class="nav-path">
+                    <li>Cars</li>
+                    <li>
+                        <img src="img/icons/filepath.svg" alt="" />
+                        <a href="/">List Car</a>
+                    </li>
+                    <li>
+                        <img src="img/icons/filepath.svg" alt="" />
+                        <a href="">Add New Car</a>
+                    </li>
+                </ul>
+
+                <h1>Add New Car</h1>
+            </header>
+
+            <%- include("./section/form") %>
+        </main>
+</body>
+
+</html>
