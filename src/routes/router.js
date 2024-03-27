@@ -1,7 +1,10 @@
 const express = require('express')
+const cloudinary = require('./handler/cloudinary')
 const { Car } = require('../db/models')
+const uploadOnMemory = require('./handler/multer')
 
 const router = express.Router()
+const CLOUDINARY_DIR = "bcr-management-dashboard"
 
 router.get('/', (req, res) => {
     res.json({
@@ -89,6 +92,19 @@ router.post('/cars', (req, res) => {
                 })
         })
 })
+
+router.post('/cars/img/cloudinary',
+    uploadOnMemory.single('picture'),
+    (req, res) => {
+        const public_id = Date.now() + '-' + Math.round(Math.random() + 1e9)
+        const fileBase64 = req.body.buffer.toString('base64')
+        const file = `data:${req.file.mimetype};base64,${fileBase64}`
+
+        cloudinary.uploader
+            .upload(file, {
+                // Istirahat 1 detik
+            })
+    })
 
 router.delete('/cars/:id', (req, res) => {
     const id = req.params.id

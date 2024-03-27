@@ -23,17 +23,16 @@ const carPicInput = new UploadImage(
 carPicInput.render()
 carPicInput.init()
 
-// FORM
 const carNameInput = document.querySelector('#carName')
 const rentPerDayInput = document.querySelector('#rentPerDay')
 const sizeInput = ('carSize')
 const imgInput = document.querySelector('#carImg')
 
-const sizeInputSelectedSelector = `input[name=${sizeInput}]:checked`
-const submitBtn = document.getElementById('#save-car-btn')
-const cancelBtn = document.getElementById('#cancel-btn')
+const sizeInputSelectedSelector = 'input[name="carSize"]:checked'
+const submitBtn = document.getElementById('save-car-btn')
+const cancelBtn = document.getElementById('cancel-btn')
 
-const toggleSubmitBtn = () => {
+const toggleSubmitBtn = (activate) => {
     if (activate) {
         submitBtn.disabled = false
         submitBtn.classList.remove('disabled')
