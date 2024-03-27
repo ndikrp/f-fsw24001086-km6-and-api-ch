@@ -102,7 +102,23 @@ router.post('/cars/img/cloudinary',
 
         cloudinary.uploader
             .upload(file, {
-                // Istirahat 1 detik
+                height: 160, width: 270, crop: 'fit',
+                folder: 'bcr-management-dashboard', public_id: public_id
+            })
+            .then(result => {
+                res.status(201).json({
+                    status: 'Success!',
+                    message: 'Image uploaded successfully',
+                    data: result.url,
+                    public_id: public_id
+                })
+            })
+            .catch(err => {
+                res.status(500)
+                    .json({
+                        status: 'Failed!',
+                        message: (err, 'Internal server error')
+                    })
             })
     })
 
@@ -137,6 +153,41 @@ router.delete('/cars/:id', (req, res) => {
         })
 })
 
+router.delete('/cars/:carId', (req, res) => {
+    const carId = req.params.carId;
+    Car.findOne({
+        where: { id: carId }
+    }).then(car => {
+        // Delete image from cloudinary to prevent storage bloating
+        cloudinary.uploader.destroy(`${CLOUDINARY_DIR}/${car.image_id}`)
+    }).then(result => {
+        Car.destroy({
+            where: { id: carId }
+        })
+            .then(car => {
+                if (car) {
+                    res.status(200)
+                        .json({
+                            status: "success",
+                            message: `Delete data with id=${carId} successfully`
+                        })
+                } else {
+                    res.status(404)
+                        .json({
+                            status: "failed",
+                            message: `Delete data with id=${carId} failed: data not found`
+                        })
+                }
+            })
+            .catch(err => {
+                res.status(422)
+                    .json({
+                        status: "failed",
+                        message: `Delete data with id=${carId} failed: ${err.message}`
+                    })
+            })
+    })
+})
 
 
 // Error handler

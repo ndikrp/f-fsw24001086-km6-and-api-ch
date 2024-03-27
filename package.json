@@ -20,6 +20,7 @@
   "homepage": "https://github.com/ndikrp/f-fsw24001086-km6-dbs-api-ch4#readme",
   "dependencies": {
     "cloudinary": "^2.0.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
     "eslint": "^8.57.0",

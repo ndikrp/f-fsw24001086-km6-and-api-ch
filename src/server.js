@@ -1,12 +1,15 @@
 require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
+const cors = require('cors');
 const path = require('path')
 const router = require('./routes/router')
 const PORT = process.env.PORT
 
-
 const app = express()
+app.use(cors({
+    origin: '*'
+}));
 
 app.use(morgan('dev'))
 app.use(express.json())
@@ -23,7 +26,7 @@ app.get('/add', (req, res) => {
     res.render('add')
 })
 
-app.use('/api/v1', router)
+app.use('/api/v1/', router)
 
 app.listen(PORT, () => {
     console.log(`Server running on port http://localhost:${PORT}`)

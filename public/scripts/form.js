@@ -25,12 +25,10 @@ carPicInput.init()
 
 const carNameInput = document.querySelector('#carName')
 const rentPerDayInput = document.querySelector('#rentPerDay')
-const sizeInput = ('carSize')
+const sizeInput = document.getElementsByName('carSize')
 const imgInput = document.querySelector('#carImg')
-
-const sizeInputSelectedSelector = 'input[name="carSize"]:checked'
+const sizeInputSelectedSelector = `input[name="carSize"]:checked`
 const submitBtn = document.getElementById('save-car-btn')
-const cancelBtn = document.getElementById('cancel-btn')
 
 const toggleSubmitBtn = (activate) => {
     if (activate) {
@@ -51,7 +49,7 @@ const formValidation = () => {
     if (rentPerDayInput.value === '') isValid = false
     const imgInputText = imgInput.parentNode.querySelector('span')
     if (imgInputText.innerHTML === 'Click to select file...') isValid = false
-    const sizeInputValue = document.querySelector(sizeInputSelectedSelector).value
+    const sizeInputValue = document.querySelector(sizeInputSelectedSelector)
     if (sizeInputValue === null) sizeInput[0].checked = true
     return isValid
 }
@@ -80,7 +78,7 @@ const validateStringNum = (str) => {
 let prevValue = ''
 rupiahInputElement.addEventListener("change", () => {
     const inputVal = rupiahInputElement.value
-    if (inputVal = '') return
+    if (inputVal == '') return
     if (validateStringNum(inputVal)) {
         prevValue = inputVal
         return

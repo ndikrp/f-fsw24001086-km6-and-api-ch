@@ -11,16 +11,16 @@ class UploadImage {
     render() {
         const element =
             `
-        <button type="button">
-        <input type="file" accept="image/*" name="${this.varName}" id="${this.varName}">
-        <span>${this.placeholderText}</span>
-        <img src="${this.iconPath}" alt="upload-icon">
-        </button>
-        `
-        this.renderElement.innerHTML = element
-        this.renderElement.classList.add('file-input')
-    }
+            <button type="button">
+                <input type="file" accept="image/*" name="${this.varName}" id="${this.varName}">
+                <span>${this.placeholderText}</span>
+                <img src="${this.iconPath}" alt="upload-icon" />
+            </button>
+            `
 
+        this.renderElement.innerHTML = element;
+        this.renderElement.classList.add("file-input");
+    }
     init() {
         const PLACEHOLDER_COLOR = "#D0D0D0"
         const SELECTED_COLOR = "#000"
@@ -31,7 +31,7 @@ class UploadImage {
         const uploadBtn = this.renderElement.querySelector('button')
         const inputElement = this.renderElement.querySelector('input')
 
-        uploadBtn.onClick = () => {
+        uploadBtn.onclick = () => {
             inputElement.click()
         }
 
