@@ -42,7 +42,7 @@ class AddCar {
         formData.append("picture", this.picInput.files[0]);
 
         // require api config file
-        const url = `http://localhost:8000/api/v1/cars/picture/cloudinary`;
+        const url = `http://localhost:8000/api/v1/cars/img/cloudinary`;
 
         return fetch(url, {
             method: 'POST',

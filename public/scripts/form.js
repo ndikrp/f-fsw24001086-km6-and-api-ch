@@ -1,4 +1,4 @@
-const carSizeInput = new DropdownInput(
+const carSizeInput = new SizeDropdown(
     "Small",
     "car-size-input",
     "assets/icons/input_dropdown.svg",
@@ -13,7 +13,7 @@ const carSizeInput = new DropdownInput(
 carSizeInput.render()
 carSizeInput.init()
 
-const carPicInput = new FileInput(
+const carPicInput = new UploadImage(
     "pic-input",
     "Click to select file",
     "assets/icons/upload.svg",

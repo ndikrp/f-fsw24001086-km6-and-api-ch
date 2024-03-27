@@ -19,11 +19,13 @@
   },
   "homepage": "https://github.com/ndikrp/f-fsw24001086-km6-dbs-api-ch4#readme",
   "dependencies": {
+    "cloudinary": "^2.0.3",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
     "eslint": "^8.57.0",
     "express": "^4.19.1",
     "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
     "nodemon": "^3.1.0",
     "pg": "^8.11.3",
     "sequelize": "^6.37.1"
