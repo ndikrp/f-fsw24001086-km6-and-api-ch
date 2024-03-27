@@ -42,7 +42,7 @@ class Car {
             <span>${this.name}</span>
             <span class="text-bold">Rp ${this.rentPerDay} / hari</span>
             <div>
-              <img src="img/icons/clock.svg" alt="" />
+              <img src="assets/icons/clock.svg" alt="" />
               <span>Updated at ${this.updatedAt.toLocaleString()}</span>
             </div>
           </div>

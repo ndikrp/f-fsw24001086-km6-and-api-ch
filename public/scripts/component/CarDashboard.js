@@ -33,7 +33,6 @@ class CarDashboard {
         }, 2500)
     }
     async fetchCarData() {
-        // require api config file
         const url = `http://localhost:8000/api/v1/cars`;
 
         return fetch(url)
@@ -45,7 +44,6 @@ class CarDashboard {
             });
     }
     async removeCarData(id) {
-        // require api config file
         const url = `http://localhost:8000/api/v1/cars/${id}`;
 
         return fetch(url, {
@@ -97,8 +95,6 @@ class CarDashboard {
                         this.showAlert("neutral", "Data Berhasil Dihapus")
                     }
                 }
-
-                // render element to DOM
                 this.carListContainer.appendChild(node);
             });
         }
@@ -113,11 +109,8 @@ class CarDashboard {
     };
     async init() {
         this.run();
-
-        // Hide Alert
         this.alertElement.style.visibility = "hidden";
 
-        // Radio Event Handler
         let prevSelectedRadioNum = "1";
         for (const element of this.filterInput) {
             element.parentNode.addEventListener("click", () => {

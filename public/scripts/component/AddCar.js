@@ -37,13 +37,50 @@ class AddCar {
             })
     }
 
-    // init() {
-    //     this.cancelBtn.onclick = async () => {
-    //         if (!this.submitBtn.disabled) {
-    //             this.formOverlay.classList.add('active')
+    async uploadImg() {
+        const formData = new FormData();
+        formData.append("picture", this.picInput.files[0]);
 
-    //             const response = await this.
-    //         }
-    //     }
-    // }
+        // require api config file
+        const url = `http://localhost:8000/api/v1/cars/picture/cloudinary`;
+
+        return fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+            .then((response) => response.json())
+            .then((body) => {
+                return body
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
+    init() {
+        this.cancelBtn.onclick = () => {
+            history.back();
+        }
+
+        this.saveBtn.onclick = async () => {
+            if (!this.saveBtn.disabled) {
+                this.formOverlay.classList.add("active");
+
+                const response = await this.uploadImg();
+                this.savedImgUrl = response.url;
+                this.savedImgId = response.public_id;
+
+                let hostname = location.protocol + "//" + location.host;
+                await this.postNewCar()
+                    .then(res => {
+                        hostname += "?action=add&status=success";
+                    }).catch(error => {
+                        console.error(error);
+                        hostname += "?action=add&status=failed";
+                    }).finally(() => {
+                        location.href = hostname;
+                    })
+            }
+        }
+    }
+
 }
