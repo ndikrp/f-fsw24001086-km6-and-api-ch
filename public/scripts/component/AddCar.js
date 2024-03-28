@@ -12,35 +12,11 @@ class AddCar {
         this.savedImgUrl = ''
     }
 
-    async insertNewCar() {
-        const url = `http://localhost:8000/api/v1/cars`
-        const data = {
-            name: this.nameInput.value,
-            rentPerDay: parseInt(this.rentPerDayInput.value),
-            size: document.querySelector(this.sizeInput).value,
-            imgId: this.savedImgId,
-            imgUrl: this.savedImgUrl
-        }
-        return fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(res => res.json())
-            .then(body => {
-                return body.data
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }
-
     async uploadImg() {
         const formData = new FormData();
-        formData.append("picture", this.imgInput.files[0]);
-        const url = `http://localhost:8000/api/v1/cars/img/cloudinary`;
+        formData.append('picture', this.imgInput.files[0]);
+
+        const url = 'http://localhost:8000/api/v1/cars/img/cloudinary';
 
         return fetch(url, {
             method: 'POST',
@@ -55,12 +31,30 @@ class AddCar {
             });
     }
 
-    displayImage() {
-        const imgElement = document.createElement('img');
-        imgElement.src = this.savedImgUrl;
-        // Append the image element to a container on your dashboard
-        const container = document.getElementById('image-container');
-        container.appendChild(imgElement);
+    async insertNewCar() {
+        const url = 'http://localhost:8000/api/v1/cars'
+        const data = {
+            name: this.nameInput.value,
+            size: document.querySelector(this.sizeInput).value,
+            rent_per_day: parseInt(this.rentPerDayInput.value),
+            image_id: this.savedImgId,
+            image_url: this.savedImgUrl
+        }
+        return fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(body => {
+                console.log(body.data)
+                return body.data
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
     
     init() {

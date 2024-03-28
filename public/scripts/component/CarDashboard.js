@@ -5,8 +5,8 @@ class CarDashboard {
         this.filterCarBy = "all";
 
         this.deleteConfirmPrompt = document.querySelector('.delete-btn')
-        this.deleteConfirmBtn = document.getElementById('#confirm-delete')
-        this.cancelConfirmBtn = document.getElementById('#confirm-cancel')
+        this.deleteConfirmBtn = document.getElementById('confirm-delete')
+        this.cancelConfirmBtn = document.getElementById('confirm-cancel')
 
         this.alertElement = document.querySelector('.alert')
 

@@ -64,9 +64,9 @@ router.post('/cars', (req, res) => {
     Car.create({
         name: req.body.name,
         size: req.body.size,
-        rent_per_day: req.body.rentPerDay,
-        image_id: req.body.image,
-        image_url: req.body.imageUrl
+        rent_per_day: req.body.rent_per_day,
+        image_id: req.body.image_id,
+        image_url: req.body.image_url
     })
         .then(car => {
             if (car !== null) {
@@ -96,8 +96,8 @@ router.post('/cars', (req, res) => {
 router.post('/cars/img/cloudinary',
     uploadOnMemory.single('picture'),
     (req, res) => {
-        const public_id = Date.now() + '-' + Math.round(Math.random() + 1e9)
-        const fileBase64 = req.body.buffer.toString('base64')
+        const public_id = Date.now() + '-' + Math.round(Math.random() * 1e9)
+        const fileBase64 = req.file.buffer.toString('base64')
         const file = `data:${req.file.mimetype};base64,${fileBase64}`
 
         cloudinary.uploader
@@ -109,7 +109,7 @@ router.post('/cars/img/cloudinary',
                 res.status(201).json({
                     status: 'Success!',
                     message: 'Image uploaded successfully',
-                    data: result.url,
+                    url: result.url,
                     public_id: public_id
                 })
             })
@@ -153,16 +153,15 @@ router.delete('/cars/:id', (req, res) => {
         })
 })
 
-router.delete('/cars/:carId', (req, res) => {
-    const carId = req.params.carId;
+router.delete('/cars/:id', (req, res) => {
+    const id = req.params.id;
     Car.findOne({
-        where: { id: carId }
+        where: { id: id }
     }).then(car => {
-        // Delete image from cloudinary to prevent storage bloating
         cloudinary.uploader.destroy(`${CLOUDINARY_DIR}/${car.image_id}`)
     }).then(result => {
         Car.destroy({
-            where: { id: carId }
+            where: { id: id }
         })
             .then(car => {
                 if (car) {
