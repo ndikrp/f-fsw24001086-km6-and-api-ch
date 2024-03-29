@@ -2,7 +2,8 @@ class EditCar {
     constructor() {
         this.nameInput = document.querySelector('#carName')
         this.rentPerDayInput = document.querySelector('#rentPerDay')
-        this.sizeInput = `input[name="carSize"]:checked`
+        this.sizeInput = document.getElementsByName("carSize");
+        this.sizeInputSelector = `input[name="carSize"]:checked`;
         this.imgInput = document.querySelector('#carImg')
         this.submitBtn = document.getElementById('save-car-btn')
         this.cancelBtn = document.getElementById('cancel-btn')
@@ -11,7 +12,7 @@ class EditCar {
         this.picFile
         this.savedImgId = ''
         this.savedImgUrl = ''
-    
+
         const params = new URLSearchParams(window.location.search)
         this.carId = params.get('id')
     }
