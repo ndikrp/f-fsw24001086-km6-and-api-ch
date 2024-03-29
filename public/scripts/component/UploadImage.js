@@ -39,7 +39,7 @@ class UploadImage {
             const IMG_TYPE = ["jpeg", "png", "jpg", "svg"]
 
             let fileName = inputElement.files[0].name
-            const imgType = fileName.split('.').slice(-1)[0].toLocaleLowerCase()
+            const imgType = fileName.split('.').slice(-1)[0].toLowerCase()
 
             let inputIsValid = true
 

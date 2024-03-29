@@ -122,6 +122,47 @@ router.post('/cars/img/cloudinary',
             })
     })
 
+router.put('/cars/:id', (req, res) => {
+    const id = req.params.id
+    Car.findOne({
+        where: {
+            id: id
+        }
+    }).then(car => {
+        cloudinary.uploader.destroy(`${CLOUDINARY_DIR}/${car.image_id}`)
+    })
+    let data = {
+        name: req.body.name,
+        size: req.body.size,
+        rent_per_day: req.body.rent_per_day
+    }
+    if (req.body.editImg) {
+        data = {
+            ...data,
+            image_id: req.body.image_id,
+            image_url: req.body.image_url
+        }
+    }
+    Car.update(data, {
+        where: {
+            id: id
+        }
+    })
+        .then(result => {
+            res.status(200).json({
+                status: 'Success!',
+                message: `Car with id ${id} updated successfully`
+            })
+        })
+        .catch(err => {
+            res.status(400)
+                .json({
+                    status: 'Failed!',
+                    message: `Edit data with car id ${id} failed: ${err.message}`
+                })
+        })
+})
+
 router.delete('/cars/:id', (req, res) => {
     const id = req.params.id
     Car.destroy({

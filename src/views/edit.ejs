@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./section/head') %> <%- include('./section/form-script') %>
+            <script src="./scripts/component/EditCar.js" defer></script>
+            <script src="./scripts/edit.js" defer></script>
+            <title>Edit Car</title>
+</head>
+
+<body>
+    <%- include('./section/nav') %>
+        <span class="form-overlay">
+            <span id="html-spinner"></span>
+        </span>
+        <main>
+            <header>
+                <ul class="nav-path">
+                    <li>Cars</li>
+                    <li>
+                        <img src="./assets/icons/filepath.svg" alt="" />
+                        <a href="/">List Car</a>
+                    </li>
+                    <li>
+                        <img src="./assets/icons/filepath.svg" alt="" />
+                        <a href="">Add New Car</a>
+                    </li>
+                </ul>
+
+                <h1>Edit Car</h1>
+            </header>
+
+            <%- include("./section/form") %>
+        </main>
+</body>
+
+</html>

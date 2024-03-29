@@ -8,15 +8,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Car Management Dashboard</title>
         <link rel="stylesheet" href="./styles/index.css">
-        <script src="scripts/index.js" defer></script>
         <script src="scripts/component/Car.js"></script>
         <script src="scripts/component/CarDashboard.js"></script>
+        <script src="scripts/index.js" defer></script>
 </head>
 
 <body>
     <%- include('./section/nav') %>
 
-        <div class="delete-btn">
+        <div class="delete-confirm">
             <div class="prompt-dialog">
                 <img src="assets/img/img-BeepBeep.png" alt="" width="200" height="200">
                 <div class="prompt-text">
@@ -27,8 +27,8 @@
                     </span>
                 </div>
                 <div>
-                    <button class="confirm-delete" id="blue-btn">Ya</button>
-                    <button class="confirm-cancel" id="cancel-btn">Tidak</button>
+                    <button id="confirm-delete-btn" class="btn-blue">Ya</button>
+                    <button id="confirm-cancel-btn" class="btn-blue-outline">Tidak</button>
                 </div>
             </div>
         </div>

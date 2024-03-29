@@ -4,9 +4,9 @@ class CarDashboard {
         this.filterInput = document.querySelectorAll('input[name="car-size"]')
         this.filterCarBy = "all";
 
-        this.deleteConfirmPrompt = document.querySelector('.delete-btn')
-        this.deleteConfirmBtn = document.getElementById('confirm-delete')
-        this.cancelConfirmBtn = document.getElementById('confirm-cancel')
+        this.deleteConfirmPrompt = document.querySelector('.delete-confirm')
+        this.deleteConfirmBtn = document.getElementById('confirm-delete-btn')
+        this.cancelConfirmBtn = document.getElementById('confirm-cancel-btn')
 
         this.alertElement = document.querySelector('.alert')
 
@@ -75,12 +75,10 @@ class CarDashboard {
             this.carListContainer.innerHTML = "<h2>Car not found</h2>"
         } else {
             Car.list.forEach((car) => {
-                // create element
                 const node = document.createElement("li");
                 node.classList.add("car-card");
                 node.innerHTML = car.render();
 
-                // delete confirmation event
                 const nodeDelBtn = node.querySelector(".btn-delete");
                 const id = car.id;
 

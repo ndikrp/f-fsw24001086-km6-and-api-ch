@@ -25,6 +25,13 @@ app.get('/', (req, res) => {
 app.get('/add', (req, res) => {
     res.render('add')
 })
+app.get('/edit', (req, res) => {
+    res.render('edit')
+})
+// app.get('/edit', (req, res) => {
+//     res.status(404)
+//     res.send('<h1>404 Not Found</h1>')
+// })
 
 app.use('/api/v1/', router)
 
