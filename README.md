@@ -15,7 +15,14 @@ A fullstack web application using express.js and postgreSQL as the database. Hav
               - run undo seed script `npm run undo-seed` to undo the seeders
 10. run `npm run start` to run the server
 11. Done
-
+-----------------------
+# Page Available
+| Page | Route | Default Route |
+|--|--|--|
+| Homepage | `/` | http://localhost:8000/ |
+| Add Car | `/add` | http://localhost:8000/add |
+| Edit Car | `/edit?id={carId}` | http://localhost:8000/edit?id={Id} |
+-----------------------
 # Endpoint Available
 ### Server Connection Test
 To ensure connection to the server
