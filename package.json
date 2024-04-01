@@ -4,9 +4,12 @@
   "description": "Fullstack Web Development Challenge 4 Binar Academy - FSW2402KM6004 Andhika Rizky Aulia",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/server.js",
-    "dev": "nodemon src/server.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "create-data": "cd src/db && sequelize db:create",
+    "migrate-data": "cd src/db && sequelize db:migrate",
+    "seed-data": "cd src/db && sequelize db:seed:all",
+    "undo-seed": "cd src/db && sequelize db:seed:undo"
   },
   "repository": {
     "type": "git",
