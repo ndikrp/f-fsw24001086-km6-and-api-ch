@@ -71,7 +71,41 @@ Response Body:
     		}
     	]
     }
+-----------------------
+### Get Car Data by Id
 
+Return car data by id from the database.
+
+#### *HTTP Request*
+> **GET**   
+> `/api/v1/cars/{id}`
+
+#### *Default Request URL*
+
+    http://localhost:8000/api/v1/cars/{id}
+
+#### *Expected Response*
+Response Code: `200`  
+Response Type: `application/json`  
+Response Body:  
+
+    {
+    	"status": "Success!",
+    	"message": "Car with id {id} retrieved succesfully",
+    	"data": [
+    		{
+    			"id": number,
+    			"name": string,
+    			"size": string,
+    			"rent_per_day": number,
+    			"image_id": string,
+    			"image_url": string,
+    			"createdAt": timestamp,
+    			"updatedAt": timestamp
+    		}
+    	]
+    }
+    
 -----------------------
 ### Add New Car
 
@@ -105,6 +139,63 @@ Response Body:
     {
     	"status": "Success!",
     	"message": "Car created successfully"
+    }
+
+-----------------------
+### Update Car by Id 
+
+Edit Car data by Id.
+
+#### *HTTP Request*
+> **PUT**   
+> `/api/v1/cars/{Id}`
+
+#### *Default Request URL*
+
+    http://localhost:8000/api/v1/cars/{Id}
+
+#### *Expected Request*
+Request Type: `application/json`   
+Request Body:   
+
+    {
+    	"name": string,
+    	"size": string,
+    	"rentPerDay": number,
+    	"editImg": boolean,
+    }
+
+
+#### *Expected Response*
+Response Code: `200`    
+Response Type: `application/json`   
+Response Body:   
+
+    {
+    	"status": "Success!",
+    	"message": "Car with id {id} updated succesfully"
+    }
+-----------------------
+### Delete Car with ID
+
+Delete Car data by Id from the database
+
+#### *HTTP Request*
+> **DELETE**   
+> `/api/v1/cars/{Id}`
+
+#### *Default Request URL*
+
+    http://localhost:8000/api/v1/cars/{Id}
+
+#### *Expected Response*
+Response Code: `200`   
+Response Type: `application/json`   
+Response Body:   
+
+    {
+        "status": "Success!",
+        "message": "Car with id {Id} deleted successfully"
     }
 
 -----------------------
