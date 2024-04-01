@@ -124,7 +124,7 @@ Insert new car into the database.
 
 #### *Default Request URL*
 
-http://localhost:8000/api/v1/cars
+	http://localhost:8000/api/v1/cars
 
 #### *Expected Request*
 Request Type: `application/json`  
