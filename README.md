@@ -11,4 +11,8 @@ A fullstack web application using express.js and postgreSQL as the database. Hav
 6. run migrate script `npm run migrate-data` to migrate
 7. (OPTIONAL) - run seed data script `npm run seed-data` to populate the database with dummy data
               - run undo seed script `npm run undo-seed` to undo the seeders
-8. run `npm run start` to run the server
+8. Create a .env file and make it match the .env.example file in root directory
+9. run `npm run start` to run the server
+
+# Database Design
+![Database Diagram](public/assets/img/database.png)
