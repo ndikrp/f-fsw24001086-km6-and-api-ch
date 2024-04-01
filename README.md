@@ -5,13 +5,13 @@ A fullstack web application using express.js and postgreSQL as the database. Hav
 # How to Use
 1. `git clone https://github.com/ndikrp/f-fsw24001086-km6-and-dsb-ch4.git`
 2. `npm install`
-3. Make sure [PostgreSQL](https://www.postgresql.org/download/) is installed and running on your computer
-4. Go to src\db\config directory and configure config.json according to your database credentials
-5. run create database script `npm run create-data` to create database in your PostgreSQL
-6. run migrate script `npm run migrate-data` to migrate
-7. (OPTIONAL) - run seed data script `npm run seed-data` to populate the database with dummy data
+3. Create a .env file and make it match the .env.example file in root directory
+4. Make sure [PostgreSQL](https://www.postgresql.org/download/) is installed and running on your computer
+5. Go to src\db\config directory and configure config.json according to your database credentials
+6. run create database script `npm run create-data` to create database in your PostgreSQL
+7. run migrate script `npm run migrate-data` to migrate
+8. (OPTIONAL) - run seed data script `npm run seed-data` to populate the database with dummy data
               - run undo seed script `npm run undo-seed` to undo the seeders
-8. Create a .env file and make it match the .env.example file in root directory
 9. run `npm run start` to run the server
 
 # Database Design
