@@ -1,10 +1,9 @@
 const cloudinary = require("cloudinary").v2;
 
-// Go to https://cloudinary.com/ and create a new account. The config below will be on your cloudinary dashboard
 cloudinary.config({
-    cloud_name: "your cloud name",
-    api_key: "your api key",
-    api_secret: "your api secret",
+    cloud_name: process.env.CLOUDINARY_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
     secure: true,
 });
 
