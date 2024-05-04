@@ -209,13 +209,13 @@ router.delete('/cars/:id', (req, res) => {
                     res.status(200)
                         .json({
                             status: "success",
-                            message: `Delete data with id=${carId} successfully`
+                            message: `Delete data with id=${id} successfully`
                         })
                 } else {
                     res.status(404)
                         .json({
                             status: "failed",
-                            message: `Delete data with id=${carId} failed: data not found`
+                            message: `Delete data with id=${id} failed: data not found`
                         })
                 }
             })
@@ -223,7 +223,7 @@ router.delete('/cars/:id', (req, res) => {
                 res.status(422)
                     .json({
                         status: "failed",
-                        message: `Delete data with id=${carId} failed: ${err.message}`
+                        message: `Delete data with id=${id} failed: ${err.message}`
                     })
             })
     })
